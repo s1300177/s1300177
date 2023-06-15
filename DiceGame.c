@@ -2,19 +2,18 @@
 #include <stdlib.h>
 #include <time.h>
 
-int roll_dice(int *die1, int *die2) {
-    *die1 = rand() % 6 + 1;
-    *die2 = rand() % 6 + 1;
-    return *die1 + *die2;
-}
-
 int main() {
     srand(time(0));
 
-    int die1, die2, total;
+    char name[100];
+    printf("What is your name?\n");
+    scanf("%s", name);
+    printf("Hello, %s!\n", name);
 
-    printf("Rolling dice...\n");
-    total = roll_dice(&die1, &die2);
+    printf("Rolling the dice...\n");
+    int die1 = rand() % 6 + 1;
+    int die2 = rand() % 6 + 1;
+    int total = die1 + die2;
 
     printf("Die 1: %d\n", die1);
     printf("Die 2: %d\n", die2);
